@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fr.gmarquette.atpwtatour.R
+import fr.gmarquette.atpwtatour.databinding.FragmentPlayerProfileBinding
 import fr.gmarquette.atpwtatour.model.players.Profile
 import fr.gmarquette.atpwtatour.model.players.flags.Flags
 import fr.gmarquette.atpwtatour.model.players.profile.ProfileViewModel
@@ -19,13 +21,14 @@ class PlayerProfileFragment : Fragment() {
 
     private var menuList: List<String> = listOf("Overview", "Stats", "Results")
     private lateinit var profileViewModel: ProfileViewModel
+    private lateinit var binding: FragmentPlayerProfileBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_player_profile, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_player_profile, container, false)
+        val view = binding.root
 
         profileViewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
         val player: Profile = profileViewModel.getProfile().value!!
