@@ -1,4 +1,4 @@
-package fr.gmarquette.atpwtatour.model
+package fr.gmarquette.atpwtatour.model.players.profile
 
 import android.content.Context
 import androidx.room.Database

@@ -1,4 +1,4 @@
-package fr.gmarquette.atpwtatour.model
+package fr.gmarquette.atpwtatour.model.players.profile
 
 import androidx.lifecycle.LiveData
 import fr.gmarquette.atpwtatour.model.players.Profile

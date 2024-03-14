@@ -11,8 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fr.gmarquette.atpwtatour.R
-import fr.gmarquette.atpwtatour.model.ProfileViewModel
 import fr.gmarquette.atpwtatour.model.players.Profile
+import fr.gmarquette.atpwtatour.model.players.flags.Flags
+import fr.gmarquette.atpwtatour.model.players.profile.ProfileViewModel
 
 class PlayerProfileFragment : Fragment() {
 
@@ -26,7 +27,7 @@ class PlayerProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_player_profile, container, false)
 
-        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+        profileViewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
         val player: Profile = profileViewModel.getProfile().value!!
         // Top of the page
         val playerName: TextView = view.findViewById(R.id.nameTextView)
@@ -36,8 +37,8 @@ class PlayerProfileFragment : Fragment() {
 
         playerName.text = player.name
         playerPicture.setImageResource(player.profilePicture)
-        playerNationality.setImageResource(player.national)
-        playerRank.text = player.Rank.currentRank
+        Flags.getFlag(player.nationality, playerNationality, this.requireContext())
+        playerRank.text = player.rank.currentRank.toString()
 
         // Middle Page
         val recyclerView: RecyclerView = view.findViewById(R.id.playerProfileRecyclerView)
@@ -68,6 +69,23 @@ class PlayerProfileFragment : Fragment() {
         }
 
 
+        // Bottom of the page
+        // Overview
+        val playerAge: TextView = view.findViewById(R.id.playerAgeText)
+        val playerBirthPlace: TextView = view.findViewById(R.id.playerBirthplaceText)
+        val playerHeight: TextView = view.findViewById(R.id.playerHeightText)
+        val playerWeight: TextView = view.findViewById(R.id.playerWeightText)
+        val playerPlays: TextView = view.findViewById(R.id.playerPlaysText)
+        val playerBackhand: TextView = view.findViewById(R.id.playerBackhandText)
+        val playerCoach: TextView = view.findViewById(R.id.playerCoachText)
+
+        playerAge.text = player.age.toString()
+        playerBirthPlace.text = player.birthPlace
+        playerHeight.text = player.height.toString()
+        playerWeight.text = player.weight.toString()
+        playerPlays.text = player.plays.description
+        playerBackhand.text = player.backhand.description
+        playerCoach.text = player.coach
 
         return view
     }

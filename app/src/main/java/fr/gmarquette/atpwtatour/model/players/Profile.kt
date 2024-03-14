@@ -17,8 +17,9 @@ data class Profile(
     var nationality: String,
     var height : Int,
     var weight : Int,
-    // var plays: Plays,
-    // var career: Career,
+    var plays: Plays,
+    var backhand: Plays,
+    var career: Career,
     var rank : Rank,
     var coach: String
 )

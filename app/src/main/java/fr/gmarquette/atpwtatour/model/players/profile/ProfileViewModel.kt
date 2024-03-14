@@ -1,4 +1,4 @@
-package fr.gmarquette.atpwtatour.model
+package fr.gmarquette.atpwtatour.model.players.profile
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

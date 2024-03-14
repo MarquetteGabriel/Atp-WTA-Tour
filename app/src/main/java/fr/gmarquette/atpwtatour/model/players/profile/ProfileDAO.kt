@@ -1,4 +1,4 @@
-package fr.gmarquette.atpwtatour.model
+package fr.gmarquette.atpwtatour.model.players.profile
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

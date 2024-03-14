@@ -36,8 +36,7 @@
             app:layout_constraintBottom_toTopOf="@+id/rankTemplateTextView"
             app:layout_constraintEnd_toStartOf="@+id/nameTextView"
             app:layout_constraintStart_toEndOf="@+id/profilePictureImageView"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/nameTextView"
