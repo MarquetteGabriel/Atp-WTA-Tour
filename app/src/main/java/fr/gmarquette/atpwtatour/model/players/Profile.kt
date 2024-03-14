@@ -1,16 +1,15 @@
 package fr.gmarquette.atpwtatour.model.players
 
+import android.graphics.Bitmap
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.Date
 
 @Entity
 data class Profile(
-    @PrimaryKey(autoGenerate = true)
-    var id : Int,
     var name : String,
     var firstName : String,
-    var profilePicture : Int,
+    var profilePicture : Bitmap,
     var age : Float,
     var birthDate: Date,
     var birthPlace: String,
@@ -24,6 +23,9 @@ data class Profile(
     var coach: String
 )
 {
+    @PrimaryKey(autoGenerate = true)
+    var id : Int = 0
+
     fun setAge(age: Float) {
         this.age = age
     }
