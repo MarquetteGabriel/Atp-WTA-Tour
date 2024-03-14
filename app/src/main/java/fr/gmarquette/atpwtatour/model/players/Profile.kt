@@ -1,8 +1,13 @@
 package fr.gmarquette.atpwtatour.model.players
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.Date
 
+@Entity
 data class Profile(
+    @PrimaryKey(autoGenerate = true)
+    var id : Int,
     var name : String,
     var firstName : String,
     var profilePicture : Int,
@@ -14,7 +19,7 @@ data class Profile(
     var weight : Int,
     // var plays: Plays,
     // var career: Career,
-    // var rank : Rank,
+    var rank : Rank,
     var coach: String
 )
 {
