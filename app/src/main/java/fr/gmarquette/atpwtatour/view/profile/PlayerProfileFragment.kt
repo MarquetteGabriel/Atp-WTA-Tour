@@ -44,7 +44,7 @@ class PlayerProfileFragment : Fragment() {
         val playerNationality: ImageView = view.findViewById(R.id.nationalityProfileImageView)
         val playerRank: TextView = view.findViewById(R.id.rankTextView)
 
-        playerName.text = player.name
+        playerName.text = player.firstName + " " + player.name
         //playerPicture.setImageBitmap(player.profilePicture)
         Flags.getFlag(player.nationality, playerNationality, this.requireContext())
         //playerRank.text = player.rank.currentRank.toString()

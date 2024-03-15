@@ -15,74 +15,19 @@
         tools:context=".view.profile.PlayerProfileFragment">
 
         <!-- Top of Profile Page-->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <include layout="@layout/player_profil_top"
             android:id="@+id/profileTopBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/profilePictureImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/nationalityProfileImageView"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/rankTemplateTextView"
-                app:layout_constraintEnd_toStartOf="@+id/nameTextView"
-                app:layout_constraintStart_toEndOf="@+id/profilePictureImageView"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/nameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jannik Sinner"
-                app:layout_constraintBottom_toTopOf="@+id/rankTemplateTextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profilePictureImageView"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/rankTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/rankTemplateTextView"
-                app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
-
-            <TextView
-                android:id="@+id/rankTemplateTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:text="Rank : "
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/profilePictureImageView"
-                app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <!-- Middle of Profile Page-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/profileMiddleBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profileTopBar">
