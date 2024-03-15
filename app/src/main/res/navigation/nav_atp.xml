@@ -10,4 +10,9 @@
         android:name="fr.gmarquette.atpwtatour.view.profile.PlayerProfileFragment"
         android:label="fragment_player_profile"
         tools:layout="@layout/fragment_player_profile" />
+    <fragment
+        android:id="@+id/leaderboardFragment"
+        android:name="fr.gmarquette.atpwtatour.view.leaderboard.LeaderboardFragment"
+        android:label="fragment_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
 </navigation>

@@ -9,15 +9,15 @@ import fr.gmarquette.atpwtatour.model.players.Profile
 
 @Database(entities = [Profile::class], version = 1, exportSchema = false)
 @TypeConverters(TypeConverter::class)
-abstract class ProfileDataBase: RoomDatabase() {
+abstract class ProfileDatabase: RoomDatabase() {
 
     abstract fun profileDAO(): ProfileDAO
 
     companion object {
         @Volatile
-        private var INSTANCE: ProfileDataBase? = null
+        private var INSTANCE: ProfileDatabase? = null
 
-        fun getDatabase(context: Context): ProfileDataBase {
+        fun getDatabase(context: Context): ProfileDatabase {
             val tempInstance = INSTANCE
             if(tempInstance != null) {
                 return tempInstance
@@ -25,7 +25,7 @@ abstract class ProfileDataBase: RoomDatabase() {
             synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    ProfileDataBase::class.java,
+                    ProfileDatabase::class.java,
                     "profile_database"
                 ).build()
                 INSTANCE = instance

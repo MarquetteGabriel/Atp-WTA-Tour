@@ -11,14 +11,13 @@ import kotlinx.coroutines.launch
 class ProfileViewModel(application: Application): AndroidViewModel(application)
 {
     private val getProfiles: LiveData<List<Profile>>
-    private val getProfile: LiveData<Profile>
+    //private val getProfile: LiveData<Profile>
     private val repository: ProfileRepository
 
     init {
-        val profileDAO = ProfileDataBase.getDatabase(application).profileDAO()
+        val profileDAO = ProfileDatabase.getDatabase(application).profileDAO()
         repository = ProfileRepository(profileDAO)
         getProfiles = repository.getProfiles
-        getProfile = repository.getProfile
     }
 
     fun addProfile(profile: Profile) {
@@ -31,8 +30,8 @@ class ProfileViewModel(application: Application): AndroidViewModel(application)
         return getProfiles
     }
 
-    fun getProfile(): LiveData<Profile> {
-        return getProfile
+    fun getProfile(name: String, firstName: String): LiveData<Profile> {
+        return repository.getProfile(name, firstName)
     }
 
 }

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fr.gmarquette.atpwtatour.R
 import fr.gmarquette.atpwtatour.databinding.FragmentPlayerProfileBinding
+import fr.gmarquette.atpwtatour.model.players.Plays
 import fr.gmarquette.atpwtatour.model.players.Profile
 import fr.gmarquette.atpwtatour.model.players.flags.Flags
 import fr.gmarquette.atpwtatour.model.players.profile.ProfileViewModel
@@ -30,8 +31,13 @@ class PlayerProfileFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_player_profile, container, false)
         val view = binding.root
 
-        profileViewModel = ViewModelProvider(this)[ProfileViewModel::class.java]
-        val player: Profile = profileViewModel.getProfile().value!!
+        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+
+        // TODO: Get the player from the database
+        val player = Profile("Sinner", "Jannik", 22.0F, "", "Italy", 185, 75, Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, "Riccardo Piatti")
+        //var player = profileViewModel.getProfile("Sinner", "Jannik").value as Profile
+
+
         // Top of the page
         val playerName: TextView = view.findViewById(R.id.nameTextView)
         val playerPicture: ImageView = view.findViewById(R.id.profilePictureImageView)
@@ -39,9 +45,9 @@ class PlayerProfileFragment : Fragment() {
         val playerRank: TextView = view.findViewById(R.id.rankTextView)
 
         playerName.text = player.name
-        playerPicture.setImageResource(player.profilePicture)
+        //playerPicture.setImageBitmap(player.profilePicture)
         Flags.getFlag(player.nationality, playerNationality, this.requireContext())
-        playerRank.text = player.rank.currentRank.toString()
+        //playerRank.text = player.rank.currentRank.toString()
 
         // Middle Page
         val recyclerView: RecyclerView = view.findViewById(R.id.playerProfileRecyclerView)

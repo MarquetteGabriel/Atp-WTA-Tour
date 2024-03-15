@@ -74,7 +74,6 @@ class Level
                 }
 
                 TournamentCategory.ATP_FINALS, TournamentCategory.DAVIS_CUP, TournamentCategory.WTA_125, TournamentCategory.WTA_250, TournamentCategory.WTA_500, TournamentCategory.WTA_1000, TournamentCategory.WTA_GRAND_CHELEM, TournamentCategory.WTA_FINALS -> {}
-                else -> {}
             }
         }
     }

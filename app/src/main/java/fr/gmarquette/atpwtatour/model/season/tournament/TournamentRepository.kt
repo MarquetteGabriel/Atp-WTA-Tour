@@ -8,7 +8,7 @@ class TournamentRepository (private val tournamentDAO: TournamentDAO)
 
     val getTournaments: LiveData<List<Tournament>> = tournamentDAO.getTournaments()
 
-    suspend fun addProfile(tournament: Tournament) {
+    suspend fun addTournament(tournament: Tournament) {
         tournamentDAO.addTournament(tournament)
     }
 

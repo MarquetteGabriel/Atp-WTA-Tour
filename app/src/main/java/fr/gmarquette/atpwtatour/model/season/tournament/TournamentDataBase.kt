@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import fr.gmarquette.atpwtatour.model.season.Tournament
 
-@Database(entities = [Tournament::class], version = 1, exportSchema = false)
+@Database(entities = [Tournament::class], version = 1, exportSchema = true)
 abstract class TournamentDataBase: RoomDatabase() {
 
     abstract fun tournamentDAO(): TournamentDAO
@@ -24,7 +24,7 @@ abstract class TournamentDataBase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     TournamentDataBase::class.java,
-                    "profile_database"
+                    "tournament_database"
                 ).build()
                 INSTANCE = instance
                 return instance

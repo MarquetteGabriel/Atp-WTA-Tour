@@ -7,10 +7,14 @@ class ProfileRepository (private val profileDAO: ProfileDAO)
 {
 
     val getProfiles: LiveData<List<Profile>> = profileDAO.getProfiles()
-    val getProfile: LiveData<Profile> = profileDAO.getProfile("name", "firstName")
+    //val getProfile: LiveData<Profile> = profileDAO.getProfile("name", "firstName")
 
     suspend fun addProfile(profile: Profile) {
         profileDAO.addProfile(profile)
+    }
+
+    fun getProfile(name: String, firstName: String): LiveData<Profile> {
+        return profileDAO.getProfile(name, firstName)
     }
 
 }
