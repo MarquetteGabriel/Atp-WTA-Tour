@@ -11,8 +11,8 @@ import fr.gmarquette.atpwtatour.R
 import fr.gmarquette.atpwtatour.model.players.Profile
 import fr.gmarquette.atpwtatour.model.players.flags.Flags
 
-class LeaderboardAdapter(private val playerList: List<Profile>, private var context: Context,
-                         private val clickListener: (Profile) -> Unit) : RecyclerView.Adapter<LeaderboardAdapter.ViewHolder>()
+class LeaderboardLiveAdapter(private val playerList: List<Profile>, private var context: Context,
+                                private val clickListener: (Profile) -> Unit) : RecyclerView.Adapter<LeaderboardLiveAdapter.ViewHolder>()
 {
 
     class ViewHolder(itemView: View, clickAtPosition: (Int) -> Unit) : RecyclerView.ViewHolder(itemView) {
@@ -43,8 +43,8 @@ class LeaderboardAdapter(private val playerList: List<Profile>, private var cont
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val player = playerList[position]
 
-        holder.playerRank.text = player.rank.currentRank.toString()
-        holder.playerUpdate.text = player.rank.getRankUpdate(player.rank.previousRank, player.rank.currentRank)
+        holder.playerRank.text = player.rank.liveRank.toString()
+        holder.playerUpdate.text = player.rank.getRankUpdate(player.rank.liveRank, player.rank.previousLiveRank)
         Flags.getFlag(player.codeID.lowercase(), holder.playerFlag, context)
         holder.playerName.text = player.fullName
         holder.playerPoints.text = player.rank.points.toString()

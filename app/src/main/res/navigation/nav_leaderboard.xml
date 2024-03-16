@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_leaderboard"
+    app:startDestination="@id/leaderboardSinglesFragment">
+
+    <fragment
+        android:id="@+id/leaderboardSinglesFragment"
+        android:name="fr.gmarquette.atpwtatour.view.leaderboard.LeaderboardSinglesFragment"
+        android:label="LeaderboardSinglesFragment" >
+        <action
+            android:id="@+id/action_leaderboardSinglesFragment_to_leaderboardRaceFragment"
+            app:destination="@id/leaderboardRaceFragment" />
+        <action
+            android:id="@+id/action_leaderboardSinglesFragment_to_leaderboardLiveFragment"
+            app:destination="@id/leaderboardLiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderboardRaceFragment"
+        android:name="fr.gmarquette.atpwtatour.view.leaderboard.LeaderboardRaceFragment"
+        android:label="LeaderboardRaceFragment" >
+        <action
+            android:id="@+id/action_leaderboardRaceFragment_to_leaderboardSinglesFragment"
+            app:destination="@id/leaderboardSinglesFragment" />
+        <action
+            android:id="@+id/action_leaderboardRaceFragment_to_leaderboardLiveFragment"
+            app:destination="@id/leaderboardLiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/leaderboardLiveFragment"
+        android:name="fr.gmarquette.atpwtatour.view.leaderboard.LeaderboardLiveFragment"
+        android:label="LeaderboardLiveFragment" >
+        <action
+            android:id="@+id/action_leaderboardLiveFragment_to_leaderboardSinglesFragment"
+            app:destination="@id/leaderboardSinglesFragment" />
+        <action
+            android:id="@+id/action_leaderboardLiveFragment_to_leaderboardRaceFragment"
+            app:destination="@id/leaderboardRaceFragment" />
+    </fragment>
+</navigation>

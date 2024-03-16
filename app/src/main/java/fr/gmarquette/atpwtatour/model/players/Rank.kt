@@ -9,7 +9,10 @@ class Rank
     var bestRank: Int = 0
     var points: Int = 0
     var liveRank: Int = 0
+    var previousLiveRank: Int = 0
     var racePoints: Int = 0
+    var raceRank: Int = 0
+    var previousRaceRank: Int = 0
     var rankByWeek: HashMap<Date, Int>? = null
 
     constructor() {
@@ -18,6 +21,7 @@ class Rank
         this.bestRank = 0
         this.points = 0
         this.liveRank = 0
+        this.previousLiveRank = 0
         this.racePoints = 0
     }
     constructor(
@@ -26,6 +30,7 @@ class Rank
         bestRank: Int,
         points: Int,
         liveRank: Int,
+        previousLiveRank: Int,
         racePoints: Int
     ) {
         this.currentRank = currentRank
@@ -33,6 +38,7 @@ class Rank
         this.bestRank = bestRank
         this.points = points
         this.liveRank = liveRank
+        this.previousLiveRank = previousLiveRank
         this.racePoints = racePoints
     }
 

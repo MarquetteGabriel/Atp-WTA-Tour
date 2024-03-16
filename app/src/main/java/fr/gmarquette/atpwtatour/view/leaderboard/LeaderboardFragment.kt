@@ -7,16 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import fr.gmarquette.atpwtatour.Category
+import androidx.navigation.fragment.NavHostFragment
 import fr.gmarquette.atpwtatour.R
 import fr.gmarquette.atpwtatour.databinding.FragmentLeaderboardBinding
-import fr.gmarquette.atpwtatour.model.players.Career
-import fr.gmarquette.atpwtatour.model.players.Plays
-import fr.gmarquette.atpwtatour.model.players.Profile
-import fr.gmarquette.atpwtatour.model.players.Rank
 import fr.gmarquette.atpwtatour.model.players.profile.ProfileViewModel
 
 class LeaderboardFragment : Fragment() {
@@ -37,7 +30,33 @@ class LeaderboardFragment : Fragment() {
 
         val singleRankTextView: View = view.findViewById(R.id.leaderboardSinglesTextView)
         val raceRankTextView: View = view.findViewById(R.id.leaderboardRaceTextView)
+        val liveRankTextView: View = view.findViewById(R.id.leaderboardLiveTextView)
 
+        val navHostFragment = childFragmentManager.findFragmentById(R.id.navComponentLeaderboard) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        singleRankTextView.setOnClickListener {
+            if(navController.currentDestination?.id == R.id.leaderboardRaceFragment)
+                navController.navigate(R.id.action_leaderboardRaceFragment_to_leaderboardSinglesFragment)
+            else if (navController.currentDestination?.id == R.id.leaderboardLiveFragment)
+                navController.navigate(R.id.action_leaderboardLiveFragment_to_leaderboardSinglesFragment)
+        }
+
+        raceRankTextView.setOnClickListener {
+            if(navController.currentDestination?.id == R.id.leaderboardSinglesFragment)
+                navController.navigate(R.id.action_leaderboardSinglesFragment_to_leaderboardRaceFragment)
+            else if (navController.currentDestination?.id == R.id.leaderboardLiveFragment)
+                navController.navigate(R.id.action_leaderboardLiveFragment_to_leaderboardRaceFragment)
+        }
+
+        liveRankTextView.setOnClickListener {
+            if(navController.currentDestination?.id == R.id.leaderboardRaceFragment)
+                navController.navigate(R.id.action_leaderboardRaceFragment_to_leaderboardLiveFragment)
+            else if (navController.currentDestination?.id == R.id.leaderboardSinglesFragment)
+                navController.navigate(R.id.action_leaderboardSinglesFragment_to_leaderboardLiveFragment)
+        }
+
+        /*
         //val rankList: List<Profile> = profileViewModel.getATPProfiles().value as List<Profile>
         var tempList = mutableListOf<Profile>()
         val player1 = Profile(Category.ATP, "Sinner", "Jannik", "", 0, "", "", "Italy", "", "", Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(2, 3, 2, 8500, 2, 3500), "", )
@@ -145,8 +164,7 @@ class LeaderboardFragment : Fragment() {
         }
 
 
-
-
+        */
 
         return view
     }
