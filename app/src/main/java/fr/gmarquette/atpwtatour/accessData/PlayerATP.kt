@@ -5,7 +5,7 @@ import fr.gmarquette.atpwtatour.model.players.profile.ProfileViewModel
 class PlayerATP
 {
 
-    val url_atp_player
+    // TODO : PlayerATP
 
     fun getOverallInformations(profileViewModel: ProfileViewModel)
     {
