@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import fr.gmarquette.atpwtatour.Category
 import fr.gmarquette.atpwtatour.R
 import fr.gmarquette.atpwtatour.databinding.FragmentPlayerProfileBinding
-import fr.gmarquette.atpwtatour.model.players.Plays
 import fr.gmarquette.atpwtatour.model.players.Profile
 import fr.gmarquette.atpwtatour.model.players.flags.Flags
 import fr.gmarquette.atpwtatour.model.players.profile.ProfileViewModel
@@ -36,7 +36,7 @@ class PlayerProfileFragment : Fragment() {
 
         // TODO: Get the player from the database
         val date: Calendar = Calendar.getInstance()
-        val player = Profile("Sinner", "Jannik", 22, "2001.08.16","en italie", "Italy", "6'2\" (188cm)", "167 lbs (76kg)", Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 2018, "Riccardo Piatti")
+        val player = Profile(Category.ATP,"Sinner", "Jannik")
         //var player = profileViewModel.getProfile("Sinner", "Jannik").value as Profile
 
 

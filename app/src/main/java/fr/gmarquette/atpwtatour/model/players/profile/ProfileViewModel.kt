@@ -34,4 +34,8 @@ class ProfileViewModel(application: Application): AndroidViewModel(application)
         return repository.getProfile(name, firstName)
     }
 
+    fun getATPProfiles(): LiveData<List<Profile>> {
+        return repository.getATPProfiles
+    }
+
 }

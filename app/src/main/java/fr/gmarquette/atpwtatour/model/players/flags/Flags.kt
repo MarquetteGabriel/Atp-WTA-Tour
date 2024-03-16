@@ -48,6 +48,12 @@ class Flags
     }
 
     fun getCountryCode(country: String, callback: (String) -> Unit) {
+        if(country.length == 2)
+        {
+            callback(country)
+            return
+        }
+
         val retrofit = Retrofit.Builder().baseUrl("https://flagcdn.com/")
             .addConverterFactory(GsonConverterFactory.create()).build()
 

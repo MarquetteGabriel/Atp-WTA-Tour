@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Leaderboard
 {
-    fun getATPRankings(category: Category, profileViewModel: ProfileViewModel) {
+    fun getRankings(category: Category, profileViewModel: ProfileViewModel) {
         val retrofit = Retrofit.Builder().baseUrl("https://tennisapi1.p.rapidapi.com/api/tennis/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(OkHttpClient.Builder().addInterceptor { chain ->
@@ -83,4 +83,11 @@ class Leaderboard
             }
         })
     }
+
+    fun sortPalyersByRank(profileViewModel: ProfileViewModel) : List<Profile>?{
+        val players = profileViewModel.getProfiles().value as List<Profile>
+        players?.sortedBy { it.rank.currentRank }
+        return players
+    }
+
 }

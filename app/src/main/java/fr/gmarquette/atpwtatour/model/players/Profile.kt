@@ -24,12 +24,17 @@ data class Profile(
     var coach: String
 )
 {
-    constructor(category: Category, name: String, firstName: String) : this(category, name,
-        firstName, "",0, "", "", "", "", "",
-        Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(), "")
 
     @PrimaryKey(autoGenerate = true)
     var id : Int = 0
 
     var codeID: String = ""
+    var fullName: String = ""
+
+    init {
+        fullName = firstName + " " + name
+    }
+    constructor(category: Category, name: String, firstName: String) : this(category, name,
+        firstName, "",0, "", "", "", "", "",
+        Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(), "")
 }
