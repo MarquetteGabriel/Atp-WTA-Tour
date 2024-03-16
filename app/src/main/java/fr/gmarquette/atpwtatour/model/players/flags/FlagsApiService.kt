@@ -9,4 +9,7 @@ interface FlagsApiService
 {
     @GET("w40/{countryCode}.png")
     fun getFlag(@Path("countryCode") countryCode: String): Call<ResponseBody>
+
+    @GET("en/codes.json")
+    fun getPaysCodes(): Call<ResponseBody>
 }

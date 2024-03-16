@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/profileTopBar"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
@@ -12,56 +12,90 @@
 
     <ImageView
         android:id="@+id/profilePictureImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@drawable/sinner_full_2024" />
 
     <ImageView
         android:id="@+id/nationalityProfileImageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/rankTemplateTextView"
         app:layout_constraintEnd_toStartOf="@+id/nameTextView"
-        app:layout_constraintStart_toEndOf="@+id/profilePictureImageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.829" />
+
+    <TextView
+        android:id="@+id/firstNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/hack_bold"
+        android:text="Jannik"
+        android:textAlignment="textEnd"
+        android:textAllCaps="true"
+
+        android:textColor="@color/default_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/rankTemplateTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.471" />
 
     <TextView
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jannik Sinner"
-        android:textColor="@color/loose"
+
+        android:fontFamily="@font/hack_bold"
+        android:text="Sinner"
+        android:textAllCaps="true"
+        android:textColor="@color/default_text"
+        android:textSize="28sp"
+
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/rankTemplateTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profilePictureImageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/firstNameTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/rankTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/rankTemplateTextView"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+        app:layout_constraintEnd_toEndOf="@+id/nameTextView"
+
+        android:fontFamily="@font/hack_bold"
+        android:text="2"
+        android:textColor="@color/default_text"
+        android:textSize="14sp"/>
 
     <TextView
         android:id="@+id/rankTemplateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:text="Rank : "
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="28dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profilePictureImageView"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView" />
+        app:layout_constraintEnd_toStartOf="@+id/rankTextView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/nameTextView"
+
+        android:fontFamily="@font/hack_bold"
+        android:text="Rank : "
+        android:textColor="@color/default_text"
+        android:textSize="14sp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

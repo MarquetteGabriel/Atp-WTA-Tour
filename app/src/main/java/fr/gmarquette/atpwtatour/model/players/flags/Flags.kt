@@ -24,18 +24,49 @@ class Flags
 
         val flagApiService = retrofit.create(FlagsApiService::class.java)
 
-        val call = flagApiService.getFlag(country)
+        getCountryCode(country) { countryCode ->
+            val call = flagApiService.getFlag(countryCode)
+            call.enqueue(object : Callback<ResponseBody> {
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    if (response.isSuccessful) {
+                        val inputStream = response.body()?.byteStream()
+                        val file = File.createTempFile("tempImage", null, context.cacheDir)
+                        file.outputStream().use { outputStream ->
+                            inputStream?.copyTo(outputStream)
+                        }
+
+                        val uri = Uri.fromFile(file)
+                        Picasso.get().load(uri).into(imageView)
+                    }
+                }
+
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+
+                }
+            })
+        }
+    }
+
+    fun getCountryCode(country: String, callback: (String) -> Unit) {
+        val retrofit = Retrofit.Builder().baseUrl("https://flagcdn.com/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+
+        val flagApiService = retrofit.create(FlagsApiService::class.java)
+
+        val call = flagApiService.getPaysCodes()
         call.enqueue(object : Callback<ResponseBody> {
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                 if (response.isSuccessful) {
-                    val inputStream = response.body()?.byteStream()
-                    val file = File.createTempFile("tempImage", null, context.cacheDir)
-                    file.outputStream().use { outputStream ->
-                        inputStream?.copyTo(outputStream)
-                    }
+                    val json = response.body()?.string()
 
-                    val uri = Uri.fromFile(file)
-                    Picasso.get().load(uri).into(imageView)
+                    val countryTable = json.toString().split(",\n")
+                    for (tempCountry in countryTable) {
+                        var countryName = tempCountry.split(": ")[1].trim('\"')
+                        if (countryName == country) {
+                            val countryCode = tempCountry.split(": ")[0].replace(" ", "").replace("\n", "").trim('\"')
+                            callback(countryCode)
+                        }
+                    }
                 }
             }
 
@@ -44,6 +75,8 @@ class Flags
             }
         })
     }
+
+
 
     companion object {
         fun getFlag(nationality: String, playerNationality: ImageView, requireContext: Context) {

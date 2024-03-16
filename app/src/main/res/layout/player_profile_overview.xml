@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
+        android:fontFamily="@font/roboto_medium"
         android:text="Country"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
+        android:fontFamily="@font/roboto_medium"
         android:text="Age"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerCountryTemplate" />
@@ -29,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Height"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerAgeTemplate" />
 
@@ -38,6 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Weight"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerHeightTemplate" />
 
@@ -47,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Birthplace"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerWeightTemplate" />
 
@@ -56,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Turned Pro"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerBirthplaceTemplate" />
 
@@ -65,6 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Plays"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerTurnedProTemplate" />
 
@@ -74,6 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Backhand"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerPlaysTemplate" />
 
@@ -83,6 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Coach"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerBackhandTemplate" />
 
@@ -93,6 +102,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Country"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,6 +113,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Age"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerCountryText" />
 
@@ -111,6 +124,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Height"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerAgeText" />
 
@@ -120,6 +135,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Weight"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerHeightText" />
 
@@ -129,6 +146,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Birthplace"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerWeightText" />
 
@@ -138,6 +157,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Turned Pro"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerBirthplaceText" />
 
@@ -147,6 +168,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Plays"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerTurnedProText" />
 
@@ -156,6 +179,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Backhand"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerPlaysText" />
 
@@ -165,6 +190,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:text="Coach"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/default_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/playerBackhandText" />
 
