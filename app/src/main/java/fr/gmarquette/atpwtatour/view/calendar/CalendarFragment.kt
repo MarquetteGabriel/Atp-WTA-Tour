@@ -1,6 +1,7 @@
 package fr.gmarquette.atpwtatour.view.calendar
 
 import android.os.Bundle
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,14 +24,14 @@ class CalendarFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View?
-    {
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_calendar, container, false)
         val view = binding.root
 
         tournamentViewModel = ViewModelProvider(this).get(TournamentViewModel::class.java)
         val adapterList = CalendarAdapter {
-            Navigation.findNavController(view.rootView.findViewById(R.id.navComponentATP)).navigate(R.id.playerProfileFragment)
+            Navigation.findNavController(view.rootView.findViewById(R.id.navComponentATP))
+                .navigate(R.id.playerProfileFragment)
         }
 
         val calendarTournamentList = Calendar.getItems(tournamentViewModel)
@@ -40,6 +41,30 @@ class CalendarFragment : Fragment() {
             layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
             adapter = adapterList
         }
+
+        binding.calendarSearchView.addTextChangedListener ( object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(text: CharSequence?, start: Int, before: Int, count: Int) {
+                val filteredList = ArrayList<Any>()
+                for (item in calendarTournamentList) {
+                    if (item is CalendarTournament.Item) {
+                        if (item.tournamentName.lowercase().contains(text.toString().lowercase())) {
+                            filteredList.add(item)
+                        }
+                    }
+                    if (item is CalendarTournament.Header) {
+                        filteredList.add(item)
+                    }
+                }
+
+                adapterList.updateList(filteredList)
+            }
+
+            override fun afterTextChanged(s: android.text.Editable?) {
+            }
+        })
 
         return view
     }

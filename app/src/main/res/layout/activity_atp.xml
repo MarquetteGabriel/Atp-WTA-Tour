@@ -13,6 +13,15 @@
             tools:context=".ATPActivity"
             android:background="@color/background">
 
+                <include
+                    android:id="@+id/atp_wta_switch"
+                    layout="@layout/atp_wta_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/navComponentATP"
                     android:name="androidx.navigation.fragment.NavHostFragment"
@@ -22,7 +31,7 @@
                     app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/atp_wta_switch"
                     app:navGraph="@navigation/nav_atp" />
 
                 <com.google.android.material.bottomnavigation.BottomNavigationView
