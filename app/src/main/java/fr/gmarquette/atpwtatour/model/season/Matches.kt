@@ -21,6 +21,10 @@ data class Matches(
     @PrimaryKey(autoGenerate = true)
     var id : Int = 0
 
+    constructor() : this (
+        Profile(), Profile(), Rounds.QUALIFIER, "", 0, Score(), Stats(), ""
+    )
+
     constructor(playerOne: Profile, playerTwo: Profile, round: Rounds, duration: Int, score: Score, tournamentName: String) : this (
         playerOne, playerTwo, round, "", duration, score, Stats(), tournamentName
     )

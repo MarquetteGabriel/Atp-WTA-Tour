@@ -63,6 +63,7 @@ class TournamentsAPI
                             sglDrawSize.toString().toInt(),
                         )
                         tournament.id = id.toString().toInt()
+                        tournament.tournamentMonth = tournament.setTournamentMonth(date.toString())
                         tournamentViewModel.addTournament(tournament)
 
                     }

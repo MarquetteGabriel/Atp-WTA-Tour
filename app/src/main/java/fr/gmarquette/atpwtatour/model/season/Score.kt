@@ -22,6 +22,20 @@ class Score
         setSetFive(set5)
     }
 
+    constructor()
+    {
+        playerOneSetOne = 0
+        playerOneSetTwo = 0
+        playerOneSetThree = 0
+        playerOneSetFour = 0
+        playerOneSetFive = 0
+        playerTwoSetOne = 0
+        playerTwoSetTwo = 0
+        playerTwoSetThree = 0
+        playerTwoSetFour = 0
+        playerTwoSetFive = 0
+    }
+
     fun setSetOne(score: String)
     {
         val scores = score.split("-")

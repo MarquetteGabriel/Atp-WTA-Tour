@@ -37,4 +37,7 @@ data class Profile(
     constructor(category: Category, name: String, firstName: String) : this(category, name,
         firstName, "",0, "", "", "", "", "",
         Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(), "")
+
+    constructor() : this(Category.ATP, "", "", "", 0, "", "", "", "", "",
+        Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(), "")
 }

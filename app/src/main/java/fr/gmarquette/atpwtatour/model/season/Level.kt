@@ -60,7 +60,7 @@ class Level
                     pointsByRounds[Rounds.WINNER] = 1000
                 }
 
-                TournamentCategory.ATP_GRAND_CHELEM -> {
+                TournamentCategory.ROLLAND_GARROS, TournamentCategory.ATP_GRAND_CHELEM, TournamentCategory.AUSTRALIAN_OPEN, TournamentCategory.US_OPEN, TournamentCategory.WIMBLEDON -> {
                     pointsByRounds[Rounds.QUALIFIER] = 30
                     pointsByRounds[Rounds.R128] = 10
                     pointsByRounds[Rounds.R64] = 50
@@ -73,7 +73,7 @@ class Level
                     pointsByRank!![tournamentCategory] = pointsByRounds
                 }
 
-                TournamentCategory.ATP_FINALS, TournamentCategory.DAVIS_CUP, TournamentCategory.WTA_125, TournamentCategory.WTA_250, TournamentCategory.WTA_500, TournamentCategory.WTA_1000, TournamentCategory.WTA_GRAND_CHELEM, TournamentCategory.WTA_FINALS -> {}
+                TournamentCategory.ATP_FINALS, TournamentCategory.UNITED_CUP, TournamentCategory.DAVIS_CUP, TournamentCategory.WTA_125, TournamentCategory.WTA_250, TournamentCategory.WTA_500, TournamentCategory.WTA_1000, TournamentCategory.WTA_GRAND_CHELEM, TournamentCategory.WTA_FINALS -> {}
             }
         }
     }

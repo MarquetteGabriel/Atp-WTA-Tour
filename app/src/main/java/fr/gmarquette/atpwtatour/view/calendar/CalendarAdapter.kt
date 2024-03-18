@@ -21,6 +21,7 @@ class CalendarAdapter(private val clickListener: (CalendarTournament.Item) -> Un
 
         fun bind(tournament: CalendarTournament.Item) {
             tournamentBinding.tournament = tournament
+            tournamentBinding.logoTournament.setImageResource(tournament.logo)
             tournamentBinding.executePendingBindings()
         }
     }
