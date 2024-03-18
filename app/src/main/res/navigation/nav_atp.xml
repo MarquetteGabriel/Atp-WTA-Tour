@@ -15,4 +15,8 @@
         android:name="fr.gmarquette.atpwtatour.view.leaderboard.LeaderboardFragment"
         android:label="fragment_leaderboard"
         tools:layout="@layout/fragment_leaderboard" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="fr.gmarquette.atpwtatour.view.calendar.CalendarFragment"
+        android:label="CalendarFragment" />
 </navigation>
