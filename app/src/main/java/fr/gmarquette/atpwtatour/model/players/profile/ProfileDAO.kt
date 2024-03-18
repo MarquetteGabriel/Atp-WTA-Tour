@@ -17,7 +17,10 @@ interface ProfileDAO
     fun getProfiles(): LiveData<List<Profile>>
 
     @Query("SELECT * FROM profile_table WHERE name = :name AND firstName = :firstName")
-    fun getProfile(name: String, firstName: String): LiveData<Profile>
+    fun getProfilebyNameAndFirstName(name: String, firstName: String): LiveData<Profile>
+
+    @Query("SELECT * FROM profile_table WHERE fullName = :fullName")
+    fun getProfileByFullName(fullName: String): LiveData<Profile>
 
     @Query("SELECT * FROM profile_table WHERE category = :category")
     fun getATPProfiles(category: Category): LiveData<List<Profile>>

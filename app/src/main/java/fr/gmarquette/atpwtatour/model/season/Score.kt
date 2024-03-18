@@ -12,4 +12,48 @@ class Score
     var playerTwoSetThree: Int = 0
     var playerTwoSetFour: Int = 0
     var playerTwoSetFive: Int = 0
+
+    constructor(set1: String, set2: String, set3: String, set4: String, set5: String)
+    {
+        setSetOne(set1)
+        setSetTwo(set2)
+        setSetThree(set3)
+        setSetFour(set4)
+        setSetFive(set5)
+    }
+
+    fun setSetOne(score: String)
+    {
+        val scores = score.split("-")
+        playerOneSetOne = scores[0].toInt()
+        playerTwoSetOne = scores[1].toInt()
+    }
+
+    fun setSetTwo(score: String)
+    {
+        val scores = score.split("-")
+        playerOneSetTwo = scores[0].toInt()
+        playerTwoSetTwo = scores[1].toInt()
+    }
+
+    fun setSetThree(score: String)
+    {
+        val scores = score.split("-")
+        playerOneSetThree = scores[0].toInt()
+        playerTwoSetThree = scores[1].toInt()
+    }
+
+    fun setSetFour(score: String)
+    {
+        val scores = score.split("-")
+        playerOneSetFour = scores[0].toInt()
+        playerTwoSetFour = scores[1].toInt()
+    }
+
+    fun setSetFive(score: String)
+    {
+        val scores = score.split("-")
+        playerOneSetFive = scores[0].toInt()
+        playerTwoSetFive = scores[1].toInt()
+    }
 }

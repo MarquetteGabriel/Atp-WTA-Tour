@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fr.gmarquette.atpwtatour.Category
 import fr.gmarquette.atpwtatour.R
+import fr.gmarquette.atpwtatour.accessData.extractApis.FlagsAPI
 import fr.gmarquette.atpwtatour.databinding.FragmentPlayerProfileBinding
 import fr.gmarquette.atpwtatour.model.players.Profile
-import fr.gmarquette.atpwtatour.model.players.flags.Flags
 import fr.gmarquette.atpwtatour.model.players.profile.ProfileViewModel
 import java.util.Calendar
 
@@ -51,7 +51,7 @@ class PlayerProfileFragment : Fragment() {
         playerFirstName.text = player.firstName
         playerPicture.setImageDrawable(resources.getDrawable(R.drawable.sinner))
         //playerPicture.setImageBitmap(player.profilePicture)
-        Flags.getFlag(player.nationality, playerNationality, this.requireContext())
+        FlagsAPI.getFlag(player.nationality, playerNationality, this.requireContext())
         //playerRank.text = player.rank.currentRank.toString()
 
         // Middle Page

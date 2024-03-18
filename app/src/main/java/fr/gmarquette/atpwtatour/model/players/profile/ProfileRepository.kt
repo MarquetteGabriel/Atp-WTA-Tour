@@ -14,8 +14,12 @@ class ProfileRepository (private val profileDAO: ProfileDAO)
         profileDAO.addProfile(profile)
     }
 
-    fun getProfile(name: String, firstName: String): LiveData<Profile> {
-        return profileDAO.getProfile(name, firstName)
+    fun getProfileByNameAndFirstName(name: String, firstName: String): LiveData<Profile> {
+        return profileDAO.getProfilebyNameAndFirstName(name, firstName)
+    }
+
+    fun getProfileByFullName(fullName: String): LiveData<Profile> {
+        return profileDAO.getProfileByFullName(fullName)
     }
 
 }

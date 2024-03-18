@@ -30,8 +30,12 @@ class ProfileViewModel(application: Application): AndroidViewModel(application)
         return getProfiles
     }
 
-    fun getProfile(name: String, firstName: String): LiveData<Profile> {
-        return repository.getProfile(name, firstName)
+    fun getProfileByNameAndFirstName(name: String, firstName: String): LiveData<Profile> {
+        return repository.getProfileByNameAndFirstName(name, firstName)
+    }
+
+    fun getProfileByFullName(fullName: String): LiveData<Profile> {
+        return repository.getProfileByFullName(fullName)
     }
 
     fun getATPProfiles(): LiveData<List<Profile>> {

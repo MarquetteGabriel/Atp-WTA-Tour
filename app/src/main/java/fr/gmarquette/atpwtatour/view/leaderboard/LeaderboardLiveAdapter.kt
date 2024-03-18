@@ -8,8 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import fr.gmarquette.atpwtatour.R
+import fr.gmarquette.atpwtatour.accessData.extractApis.FlagsAPI
 import fr.gmarquette.atpwtatour.model.players.Profile
-import fr.gmarquette.atpwtatour.model.players.flags.Flags
 
 class LeaderboardLiveAdapter(private val playerList: List<Profile>, private var context: Context,
                                 private val clickListener: (Profile) -> Unit) : RecyclerView.Adapter<LeaderboardLiveAdapter.ViewHolder>()
@@ -45,7 +45,7 @@ class LeaderboardLiveAdapter(private val playerList: List<Profile>, private var 
 
         holder.playerRank.text = player.rank.liveRank.toString()
         holder.playerUpdate.text = player.rank.getRankUpdate(player.rank.liveRank, player.rank.previousLiveRank)
-        Flags.getFlag(player.codeID.lowercase(), holder.playerFlag, context)
+        FlagsAPI.getFlag(player.codeID.lowercase(), holder.playerFlag, context)
         holder.playerName.text = player.fullName
         holder.playerPoints.text = player.rank.points.toString()
 

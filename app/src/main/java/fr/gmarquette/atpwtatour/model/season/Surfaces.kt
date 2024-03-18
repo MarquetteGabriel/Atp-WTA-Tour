@@ -1,9 +1,12 @@
 package fr.gmarquette.atpwtatour.model.season
 
-enum class Surfaces
+enum class Surfaces(val description: String)
 {
-    HARD,
-    CLAY,
-    GRASS,
-    INDOOR,
+    HARD("Hard"),
+    CLAY("Clay"),
+    GRASS("Grass"),
+    CARPET("Carpet"),
+    INDOOR("Indoor"),
+    OUTDOOR("Outdoor"),
+    UNKNOWN("Unknown")
 }

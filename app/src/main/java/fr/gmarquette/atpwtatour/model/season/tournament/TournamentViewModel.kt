@@ -19,7 +19,7 @@ class TournamentViewModel(application: Application): AndroidViewModel(applicatio
         getTournaments = repository.getTournaments
     }
 
-    fun addProfile(tournament: Tournament) {
+    fun addTournament(tournament: Tournament) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.addTournament(tournament)
         }

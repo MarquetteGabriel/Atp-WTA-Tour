@@ -13,7 +13,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Leaderboard
+class LeaderboardAPI
 {
     fun getRankings(category: Category, profileViewModel: ProfileViewModel) {
         val retrofit = Retrofit.Builder().baseUrl("https://tennisapi1.p.rapidapi.com/api/tennis/")
@@ -66,7 +66,7 @@ class Leaderboard
                             name = name.substring(1).trim()
                         }
 
-                        var player = profileViewModel.getProfile(firstName, name.toString()).value as Profile
+                        var player = profileViewModel.getProfileByNameAndFirstName(firstName, name.toString()).value as Profile
                         if(player == null) {
                             player = Profile(category, firstName, name.toString())
                         }

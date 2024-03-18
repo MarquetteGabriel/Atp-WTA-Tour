@@ -1,4 +1,4 @@
-package fr.gmarquette.atpwtatour.model.players.flags
+package fr.gmarquette.atpwtatour.accessData.apis
 
 import okhttp3.ResponseBody
 import retrofit2.Call
