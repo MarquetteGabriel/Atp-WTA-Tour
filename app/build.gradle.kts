@@ -81,6 +81,7 @@ dependencies {
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     api("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
-
+    implementation(files("D:/Ce PC/Documents/Depots_Git/ATP & WTA Tour/app/libs/rcalenderlib_v2.6.0.aar"))
+    implementation("joda-time:joda-time:2.10.12")
 
 }

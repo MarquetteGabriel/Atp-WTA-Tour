@@ -17,4 +17,7 @@ interface MatchesDAO {
 
     @Query("SELECT * FROM matches_table WHERE playerOne = :player OR playerTwo = :player")
     fun getMatchesByPlayer(player: String): LiveData<List<Matches>>
+
+    @Query("SELECT * FROM matches_table WHERE date = :date")
+    fun getMatchesByDate(date: String): LiveData<List<Matches>>
 }

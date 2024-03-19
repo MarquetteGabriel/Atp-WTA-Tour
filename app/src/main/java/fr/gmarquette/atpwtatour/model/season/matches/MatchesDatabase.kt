@@ -1,9 +1,14 @@
 package fr.gmarquette.atpwtatour.model.season.matches
 
 import android.content.Context
+import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import fr.gmarquette.atpwtatour.model.season.Matches
 
+@Database(entities = [Matches::class], version = 1, exportSchema = false)
+@TypeConverters(TypeConverterMatches::class)
 abstract class MatchesDatabase : RoomDatabase() {
 
     abstract fun matchesDAO(): MatchesDAO

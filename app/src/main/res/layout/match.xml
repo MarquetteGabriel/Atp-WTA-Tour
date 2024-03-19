@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="match"
+            type="fr.gmarquette.atpwtatour.view.scores.MatchData.Item" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -39,7 +41,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/default_text"
                         android:textSize="14sp"
-                        android:text="Novak Djokovic"
+                        android:text="@{match.component1().playerOne.fullName}"
 
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +99,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerOneSetOne}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -116,7 +118,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerOneSetOneTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set1player1Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -140,7 +142,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerOneSetTwo}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -159,7 +161,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerOneSetTwoTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set2player1Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -183,7 +185,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerOneSetThree}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -202,7 +204,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerOneSetThreeTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set3player1Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -226,7 +228,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerOneSetFour}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -245,7 +247,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerOneSetFourTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set4player1Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -269,7 +271,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerOneSetFive}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -288,7 +290,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerOneSetFiveTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set5player1Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -318,7 +320,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/default_text"
                         android:textSize="14sp"
-                        android:text="Jannik Sinner"
+                        android:text="@{match.component1().playerTwo.fullName}"
 
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -376,7 +378,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerTwoSetOne}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -395,7 +397,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerTwoSetOneTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set1player2Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -419,7 +421,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerTwoSetTwo}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -438,7 +440,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerTwoSetTwoTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set2player2Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -462,7 +464,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerTwoSetThree}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -481,7 +483,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerTwoSetThreeTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set3player2Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -505,7 +507,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerTwoSetFour}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -524,7 +526,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerTwoSetFourTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set4player2Text"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -548,7 +550,7 @@
                                 android:fontFamily="@font/roboto_bold"
 
                                 android:gravity="center"
-                                android:text="7"
+                                android:text="@{match.component1().score.playerTwoSetFive}"
                                 android:textColor="@color/default_text"
 
                                 android:textSize="14sp"
@@ -567,7 +569,7 @@
                                 android:textColor="@color/default_text"
                                 android:textSize="11sp"
 
-                                android:text="6"
+                                android:text="@{match.component1().score.playerTwoSetFiveTieBreak}"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@+id/set5player2Text"
                                 app:layout_constraintTop_toTopOf="parent" />

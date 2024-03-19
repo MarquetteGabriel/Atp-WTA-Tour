@@ -16,4 +16,8 @@ class MatchesRepository (private val matchesDAO: MatchesDAO) {
     fun getMatchesByPlayer(player: String): LiveData<List<Matches>> {
         return matchesDAO.getMatchesByPlayer(player)
     }
+
+    fun getMatchesByDate(date: String): LiveData<List<Matches>> {
+        return matchesDAO.getMatchesByDate(date)
+    }
 }

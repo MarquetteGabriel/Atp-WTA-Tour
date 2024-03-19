@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.scores.ScoresFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".view.scores.ScoresFragment">
 
-</FrameLayout>
+        <com.rezwan.rcalenderlib.views.YearRangeCalendarView
+            android:id="@+id/yearRangeCalendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:calendar_mode="week"
+            app:highlight_today_at_startup="true"
+            app:month_name_maxlength="three"
+
+            app:show_month="false"
+            app:sticky_date="true"
+
+            android:background="@color/background"
+            app:active_date_background="@color/section"
+            app:date_text_color="@color/default_text"
+            app:day_text_color="@color/default_text"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/matchRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@color/background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yearRangeCalendarView" />
+
+        <TextView android:id="@+id/noMatchesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No matches"
+            android:textSize="24sp"
+            android:fontFamily="@font/hack_bold"
+            android:textColor="@color/text_unselected"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yearRangeCalendarView"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

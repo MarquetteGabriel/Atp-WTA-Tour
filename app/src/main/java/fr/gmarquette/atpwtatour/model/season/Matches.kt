@@ -21,6 +21,9 @@ data class Matches(
     @PrimaryKey(autoGenerate = true)
     var id : Int = 0
 
+    var seriePlayerOne: String = ""
+    var seriePlayerTwo: String = ""
+
     constructor() : this (
         Profile(), Profile(), Rounds.QUALIFIER, "", 0, Score(), Stats(), ""
     )

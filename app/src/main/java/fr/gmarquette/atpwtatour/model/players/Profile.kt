@@ -40,4 +40,7 @@ data class Profile(
 
     constructor() : this(Category.ATP, "", "", "", 0, "", "", "", "", "",
         Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(), "")
+
+    constructor(name: String, firstName: String, nationality: String) : this(Category.ATP, name, firstName, "", 0, "", "", nationality, "", "",
+        Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(), "")
 }

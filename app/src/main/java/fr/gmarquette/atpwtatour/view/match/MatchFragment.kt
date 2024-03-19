@@ -5,16 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import fr.gmarquette.atpwtatour.R
+import fr.gmarquette.atpwtatour.databinding.FragmentMatchBinding
 
 class MatchFragment : Fragment() {
 
+    private lateinit var binding: FragmentMatchBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_match, container, false)
+        binding = FragmentMatchBinding.inflate(inflater, container, false)
+        var view = binding.root
+
+        return view
     }
 
 }

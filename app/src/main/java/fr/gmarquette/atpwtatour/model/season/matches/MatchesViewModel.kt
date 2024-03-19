@@ -30,4 +30,8 @@ class MatchesViewModel(application: Application): AndroidViewModel(application) 
     fun getMatchesByPlayer(player: String): LiveData<List<Matches>> {
         return repository.getMatchesByPlayer(player)
     }
+
+    fun getMatchesByDate(date: String): LiveData<List<Matches>> {
+        return repository.getMatchesByDate(date)
+    }
 }
