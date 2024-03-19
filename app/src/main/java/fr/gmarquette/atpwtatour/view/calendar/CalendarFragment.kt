@@ -31,7 +31,7 @@ class CalendarFragment : Fragment() {
         tournamentViewModel = ViewModelProvider(this).get(TournamentViewModel::class.java)
         val adapterList = CalendarAdapter {
             Navigation.findNavController(view.rootView.findViewById(R.id.navComponentATP))
-                .navigate(R.id.tournamentProfilFragment)
+                .navigate(CalendarFragmentDirections.actionCalendarFragmentToTournamentProfilFragment(it.tournamentName))
         }
 
         val calendarTournamentList = Calendar.getItems(tournamentViewModel)

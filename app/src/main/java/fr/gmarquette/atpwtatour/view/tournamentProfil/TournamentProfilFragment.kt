@@ -5,16 +5,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import fr.gmarquette.atpwtatour.R
+import androidx.navigation.fragment.navArgs
+import fr.gmarquette.atpwtatour.databinding.FragmentTournamentProfilBinding
+import fr.gmarquette.atpwtatour.model.season.tournament.TournamentViewModel
 
 class TournamentProfilFragment : Fragment() {
 
+    private lateinit var tournamentViewModel: TournamentViewModel
+    private lateinit var binding: FragmentTournamentProfilBinding
+    private val args: TournamentProfilFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tournament_profil, container, false)
+        binding = FragmentTournamentProfilBinding.inflate(inflater, container, false)
+        var view = binding.root
+
+        val matchData = args.playerName
+        // TODO : recherche du tournoi en fonction du nom + fragment TournamentProfil
+        //val tournament = tournamentViewModel.getTournamentByName(matchData)
+
+        binding.tournamentName.text = matchData
+
+        return view
     }
 
 }

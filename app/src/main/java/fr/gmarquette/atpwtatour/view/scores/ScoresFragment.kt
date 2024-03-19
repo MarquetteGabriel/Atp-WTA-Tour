@@ -15,6 +15,7 @@ import com.rezwan.rcalenderlib.views.YearRangeCalendarView
 import fr.gmarquette.atpwtatour.R
 import fr.gmarquette.atpwtatour.databinding.FragmentScoresBinding
 import fr.gmarquette.atpwtatour.model.season.matches.MatchesViewModel
+import fr.gmarquette.atpwtatour.view.tournamentProfil.TournamentProfilFragmentDirections
 import java.time.LocalDate
 
 class ScoresFragment : Fragment() {
@@ -33,10 +34,10 @@ class ScoresFragment : Fragment() {
 
         val adapterList = MatchAdapter ({
             Navigation.findNavController(view.rootView.findViewById(R.id.navComponentATP))
-                .navigate(R.id.matchFragment)
+                .navigate(TournamentProfilFragmentDirections.actionTournamentProfilFragmentToMatchFragment(it.match.id.toString()))
         }, {
             Navigation.findNavController(view.rootView.findViewById(R.id.navComponentATP))
-                .navigate(R.id.tournamentProfilFragment)
+                .navigate(TournamentProfilFragmentDirections.actionTournamentProfilFragmentToScoresFragment(it.tournamentName))
         })
 
         val matchesList = MatchObject.getItems(matchesViewModel, LocalDate.now())

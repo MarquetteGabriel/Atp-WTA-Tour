@@ -143,7 +143,7 @@
             android:id="@+id/action_scoresFragment_to_tournamentProfilFragment"
             app:destination="@id/tournamentProfilFragment" />
         <argument
-            android:name="playerName"
+            android:name="tournamentName"
             app:argType="string"/>
     </fragment>
     <fragment
