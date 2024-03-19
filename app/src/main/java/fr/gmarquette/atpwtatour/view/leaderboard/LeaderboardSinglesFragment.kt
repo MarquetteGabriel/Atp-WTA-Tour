@@ -34,6 +34,7 @@ class LeaderboardSinglesFragment: Fragment()
         val view = binding.root
         profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
 
+        //TODO : Replace with API call
         var tempList = mutableListOf<Profile>()
         val player1 = Profile(Category.ATP, "Sinner", "Jannik", "", 0, "", "", "Italy", "", "", Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(2, 3, 2, 8500, 2, 1,3500 ), "", )
         val player2 = Profile(Category.ATP, "Cazaux", "Arthur", "", 0, "", "", "France", "", "", Plays.RIGHT_HANDED, Plays.TWO_HANDED_BACKHAND, 0, Career(), Rank(71, 71, 56, 450, 56, 400, 2), "", )

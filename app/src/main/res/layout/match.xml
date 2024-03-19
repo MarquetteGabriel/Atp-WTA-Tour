@@ -57,7 +57,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/default_text"
                         android:textSize="11sp"
-                        android:text="1"
+                        android:text="@{match.component1().seriePlayerOne}"
 
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -111,7 +111,7 @@
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="@color/default_text"
                         android:textSize="11sp"
-                        android:text="3"
+                        android:text="@{match.component1().seriePlayerTwo}"
 
                         android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -154,7 +154,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:layout_constraintBottom_toTopOf="@id/set1player2"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
@@ -197,7 +196,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/set1player1">
 
@@ -254,7 +252,6 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toTopOf="@id/set2player2">
 
                             <TextView
@@ -297,7 +294,6 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/set2player1">
 
                             <TextView
@@ -353,7 +349,6 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintBottom_toTopOf="@id/set3player2"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
@@ -396,7 +391,6 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/set3player1">
 
                             <TextView
@@ -451,7 +445,6 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintBottom_toTopOf="@id/set4player2"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
@@ -494,7 +487,6 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/set4player1">
 
                             <TextView
@@ -549,7 +541,6 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintBottom_toTopOf="@id/set5player2"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <TextView
@@ -592,7 +583,6 @@
                             android:layout_height="wrap_content"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/set5player1">
 
                             <TextView

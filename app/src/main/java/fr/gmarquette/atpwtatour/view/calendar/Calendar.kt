@@ -15,6 +15,7 @@ object Calendar {
         val itemList = arrayListOf<Any>()
         //val tournaments = tournamentViewModel.getTournaments().value as List<Tournament>
 
+        // TODO : API liaison
         val tournaments = mutableListOf<Tournament>()
         tournaments.add(Tournament(TournamentCategory.ATP_1000, "Melbourne 1000", "27 sept", Surfaces.HARD, Surfaces.INDOOR, 0, "Melbourne", 64))
         tournaments.add(Tournament(TournamentCategory.JO, "Paris 1000", "27 feb", Surfaces.HARD, Surfaces.INDOOR, 0, "Paris", 64))

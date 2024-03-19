@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import fr.gmarquette.atpwtatour.R
 
+// TODO: Fav Fragments
 class FavoritesFragment : Fragment() {
 
     override fun onCreateView(

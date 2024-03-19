@@ -15,7 +15,9 @@ object MatchObject
     fun getItems(matchesViewModel: MatchesViewModel, date: LocalDate) : ArrayList<Any> {
         val itemList = arrayListOf<Any>()
 
+
         // val matches = matchesViewModel.getMatchesByDate(date)
+        //TODO : Replace with API call
         val matches = mutableListOf<Matches>()
         val sinner = Profile("Sinner", "Jannik", "Italy")
         val rafa = Profile("Nadal", "Rafael", "Spain")
